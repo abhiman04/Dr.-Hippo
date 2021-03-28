@@ -1,0 +1,176 @@
+import java.util.Scanner;
+public class DoctorHippo
+{
+    public static void main(String args[])
+    {
+         //Our project is incorporated into the health category of the hackathon. The following code is associated with different feature of our website.
+         Scanner input = new Scanner(System.in);
+         //This is code associated with filling out account details and creating and account.
+         System.out.println("Welcome to Doctor Hippo!");
+         System.out.println("This is a program designed to help you collaborate with others suffering from similar mental health disorder.");
+         System.out.println("It was also track your daily health progress and send you important reminders to remain healthy.");
+         System.out.println("Please enter the following details to create an account");
+         System.out.println("Please enter your first name:");
+         String fName = input.next();
+         System.out.println("Please enter your last name:");
+         String lName = input.next();
+         System.out.println("Please enter your email");
+         String email = input.next();
+         System.out.println("Please enter your age:");
+         int age = input.nextInt();
+         System.out.println("Please enter your height(inches)");
+         int height = input.nextInt();
+         System.out.println("Please enter your weight(lbs)");
+         int weight = input.nextInt();
+         System.out.println("Please enter any health conditions you suffer from:");
+         String condition = input.next();
+         System.out.println("Please enter any medications you are currently using");
+         String med = input.next();
+         System.out.println("Please enter any medication you are allergic to");
+         String med3 = input.next();
+         System.out.println("We will send you an email about connecting your account with medical information provided by your doctor");
+         System.out.println("Please enter the code in the email to link accounts.You also have access to direct communication to a doctor");
+         
+         // This is the part of code the where members can log their health data.
+         System.out.println("Welcome to your daily health tracker!");
+         System.out.println("Please link your smart watch. If this is not possible some information must be entered manually. If already linked type n/a.");
+         System.out.println("Please enter the month");
+         int month = input.nextInt();
+         System.out.println("Please enter the date");
+         int date = input.nextInt();
+         System.out.println("Please enter the time(military time without colon)");
+         int time = input.nextInt();
+         System.out.println("Please enter the amount of water you drank this morning(ounces):");
+         int waterM = input.nextInt();
+          System.out.println("Please enter the amount of water you drank this afternoon(ounces):");
+         int waterA = input.nextInt();
+          System.out.println("Please enter the amount of water you drank this evening(ounces):");
+         int waterE = input.nextInt();
+         System.out.println("Please enter your pulse:");
+         int pulse = input.nextInt();
+         System.out.println("Please enter the amount of sleep you got yesterday(minutes)");
+         int hours = input.nextInt();
+         System.out.println("Please enter your blood pressure(without slash)");
+         int bp = input.nextInt();
+         System.out.println("Thank you for filling this information. We will send you frequent reminders to help you stay healthy and happy!");
+         //Code checks if patient's daily requirements are met and informs doctor if anything is abnormal.
+         if(waterM>=32)
+         {
+          System.out.println("Good Job! You drank enough water this morning!.");
+         }
+         else
+         {
+          System.out.println("You didn't reach the goal amount this morning. Time to drink some water:)");
+
+         }
+         if(waterA>=64)
+         {
+           System.out.println("Good Job! You drank enough water this afternoon.");        
+         }
+         else
+         {
+           System.out.println("You didn't reach the goal amount this afternoon. Time to drink some water:)");
+         }
+         if(waterE>=96)
+         {
+          System.out.println("Good Job! You drank enough water this evening.");       
+         } 
+         else
+         {
+           System.out.println("You didn't reach the goal amount this evening. Time to drink some water:)");
+         }
+         
+         if(pulse>=60 && pulse<=100)
+         {
+          System.out.println("Your pulse is normal:)");
+         }
+         else
+         {
+          System.out.println("Your pulse is abnormal. Check and record your pulse again");
+         }
+         System.out.println("Please enter your pulse again:");
+         pulse = input.nextInt();
+         if(pulse>=60 && pulse<=100)
+         {
+          System.out.println("Your pulse is normal:)");
+         }
+         else
+         {
+          System.out.println("Your pulse is abnormal. Contacting physician.");
+         }
+         if(hours>=8 && hours<=12)
+         {
+            System.out.println("Good job! You got enough sleep today.");
+
+         }
+         else
+         {
+          System.out.println("You did not get enough sleep today. Make sure to get atleast 8 hours tomorrow.");
+
+         }
+         
+         //This is the code for the Mental Health Survey/Inquiry members fill out.
+         System.out.println("Welcome to Mental Health Inquiry!");
+         System.out.println("Please type in how you feel today:");
+         String summary = input.next();
+         System.out.println("Rate your mood from 1-10:");
+         int mood = input.nextInt();
+         System.out.println("Please enter the number of breaks you have taken today");
+         int breaks = input.nextInt();
+         System.out.println("Please enter how long you excercised today(hours)");
+         int excer = input.nextInt();
+         System.out.println("You took all required/prescribed medication today(true/false) ");
+         boolean med2 = input.nextBoolean();
+         if(mood<=5)
+         {
+           System.out.println("Dont worry. It is okay to have bad days. Make sure you are talking with others, this will help improve your mood");
+         }
+         else
+         {
+            System.out.println("Yay! Make sure to continue healthy habits to have an amazing day.");
+
+         }
+         if(breaks<= 10)
+         {
+           System.out.println("Make sure you are taking enough breaks, this is very important for brain function");
+
+         }
+         else
+         {
+          System.out.println("Good job. You are on the track to building healthy habits.");
+
+         }
+         if(excer==0 || excer<=10)
+         {
+         System.out.println("It is important to have physical activity everyday. Try to get in at least an hour of excercise today");
+
+         }
+         if(excer>=30 && excer<=70)
+         {
+          System.out.println("Good job! You got in enough physical activity for today.");
+
+         }
+         if(med2 == false)
+         {
+         System.out.println("It is vital to take medicine on time. Make sure to log this in, so you physician can give feedback/advice on next steps");
+
+         }
+         else
+         {
+          System.out.println("Good Job! Keep up the good work.");
+
+         }
+         //This is the part of the code that relates to mental health reminders.
+         System.out.println("Mental Health Reminders");
+         System.out.println("Make sure to meditate today!");
+         System.out.println("Make sure to do something creative/hands-on today!");
+         System.out.println("Make sure to complete breathing excerices or do yoga today!");
+         System.out.println("Make sure to eat healthy nutritous meals!");
+         System.out.println("Make sure to catalog evrything today and build healthy habits.");
+
+
+
+ 
+    }
+    
+}         
